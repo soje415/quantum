@@ -385,6 +385,18 @@ deno_version = 2
 # [edge_runtime.secrets]
 # secret_key = "env(SECRET_VALUE)"
 
+# --- PHANTOM SHIELD Batch 2: the landing/scan flow is PRE-AUTH (anonymous
+# visitors call these before any account exists), so JWT verification is off.
+# The anti-lookup guarantee is enforced by the verification gate, NOT by JWT.
+[functions.issue-challenge]
+verify_jwt = false
+
+[functions.verify-challenge]
+verify_jwt = false
+
+[functions.scan]
+verify_jwt = false
+
 [analytics]
 enabled = true
 port = 54327
