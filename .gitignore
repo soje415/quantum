@@ -10,3 +10,6 @@ supabase/.env
 
 # OS / editor
 .DS_Store
+
+# Phantom Shield hash pepper (never commit)
+supabase/.pepper
